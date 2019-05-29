@@ -1,0 +1,455 @@
+%
+% template alpha v0.1
+%
+%\documentclass[a4paper,12pt]{report}
+\documentclass[
+  12pt,				
+  openright,	
+  twoside,	
+  a4paper,
+  brazil,	
+  oldfontcommands,
+  ]{abntex2}
+
+\usepackage{lmodern}
+\usepackage[utf8]{inputenc}
+%\usepackage[english]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+
+%\usepackage{natbib}
+%\usepackage{bibentry}
+\usepackage{etoolbox}
+\patchcmd{\thebibliography}{\section*{\refname}}{}{}{}
+\patchcmd{\thebibliography}{\addcontentsline{toc}{section}{\refname}}{}{}{}
+
+\usepackage{comment}
+
+\usepackage[table,hyperref,x11names]{xcolor}
+%\usepackage{colortbl}
+
+\usepackage{pifont}% http://ctan.org/pkg/pifont
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
+\newcommand{\whitespace}{{\color{white}x}}%
+
+\usepackage{graphicx}
+\graphicspath{{contrib-fcul-src/figures/}}
+\DeclareGraphicsExtensions{.pdf,.jpeg,.png,.eps}
+\usepackage{boxedminipage}
+
+\usepackage{pgfplots}
+\usepackage{savesym}
+\usepackage{amsmath}
+\savesymbol{iint}
+\usepackage{txfonts}
+\restoresymbol{TXF}{iint}
+
+\usepackage{url}
+\usepackage{xspace}
+\usepackage{array}
+\usepackage{amsmath}
+\usepackage{tabularx}
+\usepackage{makeidx}
+\usepackage{fancyhdr}
+\usepackage{color}
+\usepackage{setspace}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{daytime}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[ddmmyyyy]{datetime}
+\usepackage{listings}
+\usepackage{algorithmicx,float}
+\usepackage[lined,ruled,linesnumbered,inoutnumbered,commentsnumbered]{algorithm2e}
+\usepackage{algpseudocode}
+%\usepackage[colorlinks=true,urlcolor=SteelBlue4,linkcolor=Firebrick4]{hyperref}
+%\usepackage[show]{chato-notes}
+%\usepackage[hide]{chato-notes}
+
+% page borders config
+\oddsidemargin -0.6in
+\evensidemargin -0.6in
+\textwidth 7.5in
+\topmargin -0.6in
+\textheight 9.5in
+\setlength{\headsep}{45pt}
+
+%\setlength{\parindent}{0in}
+\setlength{\parskip}{1ex plus 1ex minus 0.2ex}
+\renewcommand{\dateseparator}{-}
+\renewcommand{\arraystretch}{1.5}
+\newdateformat{ukvardate}{\monthname[\THEMONTH]\xspace\THEDAY, \THEYEAR}
+
+%\usepackage{ltablex}
+
+\begin{document}
+
+\pagestyle{fancy}
+
+\fancyhf{}
+\fancyhead[LO,LE]{\includegraphics[width=1.8cm]{images/Logo_logotipo_unipampa_cor.jpg}}
+\fancyhead[RO,RE]{\normalsize \bf 
+\vspace*{\fill}
+FORMUL\'{A}RIO DE CADASTRO DE PROJETOS DE PESQUISA
+\vspace*{\fill}
+}
+\fancyfoot[RE,RO]{\thepage\xspace de \pageref{DocLastPage}}
+\fancyfoot[LO,LE]{\footnotesize Formul\'{a}rio modelo outubro 2016.}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% DADOS DO PROJETO
+\begin{table}[htp]
+\begin{center}
+\begin{tabularx}{\textwidth}{|p{7.5cm}|X|}
+\hline
+\cellcolor{green} \textbf{T\'{i}tulo do Projeto} 
+& Título do Projeto \\\hline
+
+\cellcolor{green} \textbf{Coordenador} 
+& Fulano de Tal \\\hline
+
+\cellcolor{green} \textbf{Email institucional do coordenador} 
+& \href{mailto:fulano.tal@unipampa.edu.br}{fulano.tal@unipampa.edu.br} \\\hline
+
+\cellcolor{green} \textbf{Palavras-chave {\tiny (Informe de tr\^{e}s a seis palavras-chave, separadas por v\'{i}rgula)}} 
+& Palavra1, Palavra2, Palavra3, Palavra4, Palavra5, Palavra6 \\\hline
+
+\cellcolor{green} \textbf{Projeto apresenta car\'{a}ter inovador {\tiny (Em caso afirmativo, explicitar o potencial de inova\c{c}\~{a}o de produtos, processos ou servi\c{c}os no item ``Outras informa\c{c}\~{o}es relevantes'')}} 
+& (\xmark) Sim \whitespace (\whitespace) N\~{a}o \\\hline
+
+\cellcolor{green} \textbf{Projeto requer avalia\c{c}\~{a}o do Comit\^{e} de \'{E}tica em Pesquisa (CEP) ou Comit\^{e} de \^{E}tica no uso de Animais (CEUA)} 
+& (\whitespace) Sim \whitespace (\xmark) N\~{a}o \\\hline
+
+\cellcolor{green} \textbf{Gera\c{c}\~{a}o de res\'{i}duos {\tiny (Em caso de resposta afirmativa, informa\c{c}\~{o}es adicionais devem ser inseridas no arquivo ``Gera\c{c}\~{a}o de res\'{i}duos'' que est\'{a} dispon\'{i}vel no s\'{i}tio da PROPPI e no SIPPEE)}} 
+& (\whitespace) Sim \whitespace (\xmark) N\~{a}o \\\hline
+\end{tabularx}
+\end{center}
+\end{table}
+\vspace{-10mm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+{\footnotesize
+\begin{itemize}[noitemsep]
+    \item O projeto pode ter no m\'{a}ximo 10 p\'{a}ginas, considerando fonte Times New Roman, tamanho 12 e espa\c{c}amento simples.
+
+    \item Para submiss\~{a}o do projeto no SIPPEE ser\'{a} necess\'{a}rio inserir os dados da equipe executora (nome, e-mail e CPF) e a carga hor\'{a}ria semanal dedicada ao projeto.
+\end{itemize}
+}
+
+\vspace{-5mm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% RESUMO
+\begin{table}[H]
+\begin{center}
+\rowcolors{1}{green}{green}\begin{tabularx}{\textwidth}{|X|}
+\hline
+{\bf Resumo} {\tiny (somente texto at\'{e} 3.000 caracteres)}\\\hline
+\end{tabularx}
+\end{center}
+\end{table}
+\vspace{-10mm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Escreva aqui o seu resumo.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% INTRODUCAO
+\begin{table}[H]
+\begin{center}
+\rowcolors{1}{green}{green}\begin{tabularx}{\textwidth}{|X|}
+\hline
+{\bf Introdu\c{c}\~{a}o}\\\hline
+\end{tabularx}
+\end{center}
+\end{table}
+\vspace{-10mm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Uma breve introdução ao projeto~\cite{welive2016tbs,newman2017tbc}. 
+
+Coisas e mais coisas~\cite{pwc2014ucc,kerr2010stuxnet,langner2011stuxnet,islam2016classification,shu2016security}.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% JUSTIFICATIVA
+\begin{table}[H]
+\begin{center}
+\rowcolors{1}{green}{green}\begin{tabularx}{\textwidth}{|X|}
+\hline
+{\bf Justificativa} \\\hline
+\end{tabularx}
+\end{center}
+\end{table}
+\vspace{-10mm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Escreva a sua justificativa aqui. Referências geralmente são úteis~\cite{bukac2015analyzing,doupe2010johnny,vieira2009using}.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% OBJETIVOS
+\begin{table}[H]
+\begin{center}
+\rowcolors{1}{green}{green}\begin{tabularx}{\textwidth}{|X|}
+\hline
+{\bf Objetivos } \\\hline
+\end{tabularx}
+\end{center}
+\end{table}
+\vspace{-10mm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+O projeto tem como objetivos principais:
+%\vspace{-2mm}
+\begin{enumerate}[noitemsep]
+\item objetivo 1;
+\item objetivo 2;
+\item objetivo 3;
+\item objetivo 4.
+\end{enumerate}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% MATERIAIS E METODOS
+\begin{table}[H]
+\begin{center}
+\rowcolors{1}{green}{green}\begin{tabularx}{\textwidth}{|X|}
+\hline
+{\bf Materiais e M\'{e}todos} \\\hline
+\end{tabularx}
+\end{center}
+\end{table}
+\vspace{-10mm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Caracterize aqui os principais materiais e métodos que serão utilizados no decorrer do desenvolvimento do projeto.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% RESULTADOS ESPERADOS
+\begin{table}[H]
+\begin{center}
+\rowcolors{1}{green}{green}\begin{tabularx}{\textwidth}{|X|}
+\hline
+{\bf Resultados Esperados} \\\hline
+\end{tabularx}
+\end{center}
+\end{table}
+\vspace{-10mm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Os resultados esperados podem ser sintetizados em:
+
+\begin{itemize}[noitemsep]
+
+\item Resultado 1;
+
+\item Resultado 2;
+
+\item Resultado 3.
+
+\end{itemize}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% REFERENCIAS
+\begin{table}[H]
+\begin{center}
+\rowcolors{1}{green}{green}\begin{tabularx}{\textwidth}{|X|}
+\hline
+{\bf Refer\^{e}ncias} \\\hline
+\end{tabularx}
+\end{center}
+\end{table}
+\vspace{-10mm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\nobibliography{references}
+%\bibliographystyle{alpha}
+
+\begingroup
+\renewcommand{\section}[2]{}%
+\renewcommand{\chapter}[2]{}% for other classes
+\bibliographystyle{sbc}
+\bibliography{references}
+\endgroup
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% PARCERIAS
+%\begin{comment}
+\begin{table}[H]
+\begin{center}
+\begin{tabularx}{\textwidth}{|X|X|}
+\multicolumn{2}{l}{\noindent \textbf{Parcerias}}\\
+\multicolumn{2}{l}{\noindent {\footnotesize Adicionar quantas linhas for necess\'{a}rio. (n\~{a}o obrigat\'{o}rio)}}\\
+\hline
+\cellcolor{green} {\bf Nome da Pessoa ou Institui\c{c}\~{a}o}(*) & \cellcolor{green} Descri\c{c}\~{a}o da Participa\c{c}\~{a}o \\\hline
+ &  \\\hline
+\multicolumn{2}{l}{\noindent {\footnotesize (*) Verificar a necessidade de ser firmado conv\^{e}nio para execu\c{c}\~{a}o do projeto.}}\\
+\end{tabularx}
+\end{center}
+\end{table}
+\vspace{-10mm}
+%\end{comment}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% CRONOGRAMA
+% ANO 1
+\begin{table}[H]
+\begin{center}
+\begin{tabularx}{\textwidth}{|p{10cm}|X|X|X|X|X|X|X|X|X|X|X|X|}
+\multicolumn{12}{l}{\textbf{Cronograma de Atividades}} \\
+\multicolumn{12}{l}{\footnotesize Projetos de pesquisa podem ter \underline{\textbf{dura\c{c}\~{a}o m\'{a}xima de 4 anos}} de execu\c{c}\~{a}o.} \\
+\multicolumn{12}{l}{\footnotesize Adicionar quantas linhas for necessário.} \\
+\hline
+\multicolumn{12}{|c|}{\cellcolor{green} \textbf{Ano 1}} \\\hline
+\multirow{3}{*}{\textbf{Descri\c{c}\~{a}o da Atividade}} 
+                                                         	& F & M & A & M & J & J & A & S & O & N & D \\
+                                                         	& E & A & B & A & U & U & G & E & U & O & E \\
+                                                         	& V & R & R & I & N & L & O & T & T & V & Z \\\hline
+Atividade 1     					& x & x & x & x & x & x  &   &   &   &   &   \\\hline
+Atividade 2                                       	&   &   &   &   & x &  x & x  & x  & x  & x  & x  \\\hline
+Atividade 3	                               	&   &   &   &   & x & x & x & x  & x  & x  & x  \\\hline
+Atividade 4	                                  &   &   &   &   &   &  x &  x &  x & x  & x  & x  \\\hline
+\end{tabularx}
+\end{center}
+\end{table}
+\vspace{-10mm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% CRONOGRAMA
+% ANO 2
+\begin{table}[H]
+\begin{center}
+\begin{tabularx}{\textwidth}{|p{10cm}|X|X|X|X|X|X|X|X|X|X|X|X|}
+\hline
+\multicolumn{12}{|c|}{\cellcolor{green} \textbf{Ano 2}} \\\hline
+\multirow{3}{*}{\textbf{Descri\c{c}\~{a}o da Atividade}} 
+                                                         	& F & M & A & M & J & J & A & S & O & N & D \\
+                                                         	& E & A & B & A & U & U & G & E & U & O & E \\
+                                                         	& V & R & R & I & N & L & O & T & T & V & Z \\\hline
+Atividade 1                                     	& x & x & x & x & x & x &   &   &   &   &   \\\hline
+Atividade 2	                     		&   &   &   &   &   & x  & x  & x  & x  & x  & x  \\\hline
+Atividade 3			                 & x & x & x & x & x & x  & x  & x  & x  & x  & x  \\\hline
+Atividade 4					&   &   &   &   & x  &  x & x  & x &  x & x &  x \\\hline
+\end{tabularx}
+\end{center}
+\end{table}
+\vspace{-10mm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% CRONOGRAMA
+% ANO 3
+\begin{table}[H]
+\begin{center}
+\begin{tabularx}{\textwidth}{|p{10cm}|X|X|X|X|X|X|X|X|X|X|X|X|}
+\hline
+\multicolumn{12}{|c|}{\cellcolor{green} \textbf{Ano 3}} \\\hline
+\multirow{3}{*}{\textbf{Descri\c{c}\~{a}o da Atividade}} 
+                                             		& F & M & A & M & J & J & A & S & O & N & D \\
+                                                     	& E & A & B & A & U & U & G & E & U & O & E \\
+                                                     	& V & R & R & I & N & L & O & T & T & V & Z \\\hline
+Atividade 1				   	& x  & x  & x  & x  & x  &   &   &   &   &   &   \\\hline
+Atividade 2				 	&   &   &   &   & x & x &  x & x  & x  &  x &  x \\\hline
+Atividade 3	                              	&   &   &   & x  & x   & x  & x  & x  & x  & x  & x   \\\hline
+\end{tabularx}
+\end{center}
+\end{table}
+\vspace{-10mm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% CRONOGRAMA
+% ANO 4
+\begin{table}[H]
+\begin{center}
+\begin{tabularx}{\textwidth}{|p{10cm}|X|X|X|X|X|X|X|X|X|X|X|X|}
+\hline
+\multicolumn{12}{|c|}{\cellcolor{green} \textbf{Ano 4}} \\\hline
+\multirow{3}{*}{\textbf{Descri\c{c}\~{a}o da Atividade}} 
+                                                         	& F & M & A & M & J & J & A & S & O & N & D \\
+                                                         	& E & A & B & A & U & U & G & E & U & O & E \\
+                                                         	& V & R & R & I & N & L & O & T & T & V & Z \\\hline
+Atividade 1                                     	& x  & x  & x  & x  & x  & x  & x  & x  & x  & x  & x  \\\hline
+Atividade 2					&   &   &   &   &   &   & x  & x & x  & x  & x  \\\hline
+Atividade 3	                                  & x  & x  & x  & x  & x  &  x &  x & x  &  x & x  &  x \\\hline
+\end{tabularx}
+\end{center}
+\end{table}
+\vspace{-10mm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\vfill
+{\color{white}x}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% RECURSOS
+\begin{table}[H]
+\begin{center}
+    \begin{tabularx}{\textwidth}{|X|p{2cm}|p{6cm}|}
+        \multicolumn{3}{l}{\textbf{Plano de Aplica\c{c}\~{a}o de Recursos}} \\
+        \multicolumn{3}{l}{\footnotesize (marque com ``x'' a origem do recurso para cada despesa)} \\
+        \multicolumn{3}{l}{\footnotesize \color{red} Informa\c{c}\~{o}es em vermelho s\~{a}o exemplo.} \\
+\hline
+\cellcolor{green} \textbf{Grupo/Tipo de Despesa} &\cellcolor{green}  \textbf{R\$} & \cellcolor{green}  Fonte de Financionamento: {\tiny Edital externo/ Edital interno/ Sem fonte definida (explicitar)} \\\hline
+\textbf{DESPESAS DE CUSTEIO} & & \\\hline
+Aux\'{i}lio financeiro a estudantes (bolsas) & 42.240,00 & PDA \\\hline
+Di\'{a}rias & 12.000,00 & Sem fonte definida \\\hline
+Material de Consumo &  & \\\hline
+Passagem e Despesas com locomo\c{c}\~{a}o & 9.600,00 & CNPq \\\hline
+Servi\c{c}o de Terceiros -- Pessoa F\'{i}sica & & \\\hline
+Servi\c{c}os de Terceiros -- Pessoa Jur\'{i}dica & 4.000,00 & \\\hline
+\cellcolor{green} \hfill \textbf{Total de Custeio} & \cellcolor{green} \textbf{67.840,00} &\cellcolor{green}  \\\hline
+\textbf{DESPESAS DE CAPITAL} & & \\\hline
+\end{tabularx}
+\end{center}
+\end{table}
+\vspace{-10mm}
+
+\begin{table}[H]
+\begin{center}
+    \begin{tabularx}{\textwidth}{|X|p{2cm}|p{6cm}|}
+\hline
+Equipamentos e Material Permanente &  &  \\\hline
+\cellcolor{green} \hfill \textbf{Total de Capital} & \cellcolor{green}  & \cellcolor{green} \\\hline
+\cellcolor{green} \hfill \textbf{TOTAL GERAL} &\cellcolor{green}  \textbf{67.840,00} &\cellcolor{green}  \\\hline
+\multicolumn{3}{l}{\footnotesize \color{red}
+    Explicar o plano de aplica\c{c}\~{a}o dos recursos e as alternativas caso as fontes de financiamento n\~{a}o se confirmem.
+}
+\end{tabularx}
+\end{center}
+\end{table}
+\vspace{-10mm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Descreva aqui resumidamente como os recursos serão aplicados no projeto.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% OUTRAS INFO
+\begin{table}[H]
+\begin{center}
+\begin{tabularx}{\textwidth}{|X|}
+\hline
+\cellcolor{green} {\bf Outras informa\c{c}\~{o}es relevantes}\\\hline
+\multicolumn{1}{l}{\footnotesize \color{red} Informar mais detalhes sobre o projeto que n\~{a}o foram inseridos nas se\c{c}\~{o}es anteriores.} \\
+\multicolumn{1}{l}{\footnotesize \color{red} Explicitar o potencial de inova\c{c}\~{a}o de produtos, processos ou servi\c{c}os, quando o projeto apresentar car\'{a}ter inovador.} \\
+\end{tabularx}
+\end{center}
+\end{table}
+\vspace{-10mm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Outras informações complementares, relevantes ao projeto.
+
+
+{\color{white}x}
+
+\label{DocLastPage}
+
+\end{document}

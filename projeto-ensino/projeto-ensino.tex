@@ -1,0 +1,428 @@
+%\documentclass[a4paper,12pt]{report}
+\documentclass[
+  11pt,				
+  openright,	
+  twoside,	
+  a4paper,
+  brazil,	
+  oldfontcommands,
+  ]{abntex2}
+
+\usepackage{lmodern}
+\usepackage[utf8]{inputenc}
+%\usepackage[english]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+
+%\usepackage{natbib}
+%\usepackage{bibentry}
+\usepackage{etoolbox}
+\patchcmd{\thebibliography}{\section*{\refname}}{}{}{}
+\patchcmd{\thebibliography}{\addcontentsline{toc}{section}{\refname}}{}{}{}
+
+\usepackage{comment}
+
+\usepackage[table,hyperref,x11names]{xcolor}
+%\usepackage{colortbl}
+
+\usepackage{pifont}% http://ctan.org/pkg/pifont
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
+\newcommand{\whitespace}{{\color{white}x}}%
+
+\usepackage{graphicx}
+\graphicspath{{contrib-fcul-src/figures/}}
+\DeclareGraphicsExtensions{.pdf,.jpeg,.png,.eps}
+\usepackage{boxedminipage}
+
+\usepackage{pgfplots}
+\usepackage{savesym}
+\usepackage{amsmath}
+\savesymbol{iint}
+\usepackage{txfonts}
+\restoresymbol{TXF}{iint}
+
+\usepackage{url}
+\usepackage{xspace}
+\usepackage{array}
+\usepackage{amsmath}
+\usepackage{tabularx}
+\usepackage{makeidx}
+\usepackage{fancyhdr}
+\usepackage{color}
+\usepackage{setspace}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{daytime}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[ddmmyyyy]{datetime}
+\usepackage{listings}
+\usepackage{algorithmicx,float}
+\usepackage[lined,ruled,linesnumbered,inoutnumbered,commentsnumbered]{algorithm2e}
+\usepackage{algpseudocode}
+%\usepackage[colorlinks=true,urlcolor=SteelBlue4,linkcolor=Firebrick4]{hyperref}
+%\usepackage[show]{chato-notes}
+%\usepackage[hide]{chato-notes}
+
+\usepackage{enumitem}
+\newcommand{\subscript}[2]{$#1 _ #2$}
+
+% page borders config
+\oddsidemargin -0.6in
+\evensidemargin -0.6in
+\textwidth 7.5in
+\topmargin -0.6in
+\textheight 9.5in
+\setlength{\headsep}{80pt}
+
+%\setlength{\parindent}{0in}
+\setlength{\parskip}{1ex plus 1ex minus 0.2ex}
+\renewcommand{\dateseparator}{-}
+\renewcommand{\arraystretch}{1.5}
+\newdateformat{ukvardate}{\monthname[\THEMONTH]\xspace\THEDAY, \THEYEAR}
+
+\let\oldthebibliography\thebibliography
+\let\endoldthebibliography\endthebibliography
+\renewenvironment{thebibliography}[1]{
+  \begin{oldthebibliography}{#1}
+    \setlength{\itemsep}{0em}
+    \setlength{\parskip}{0em}
+}
+{
+  \end{oldthebibliography}
+}
+
+%\usepackage{ltablex}
+
+\begin{document}
+
+\pagestyle{fancy}
+
+\fancyhf{}
+\fancyhead[CO,CE]{\includegraphics[width=4.5cm]{images/logo_projeto_ensino.png}}
+\fancyfoot[RE,RO]{\thepage\xspace de \pageref{DocLastPage}}
+\fancyfoot[LO,LE]{\footnotesize Formul\'{a}rio abril 2019 (conforme modelo referência disponibilizado no SIPPEE).}
+
+\begin{center}
+Formulário de Projeto de Ensino
+\end{center}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% DADOS DO PROJETO
+\begin{table}[htp]
+\begin{center}
+\begin{tabularx}{\textwidth}{|p{5.5cm}|X|}
+\hline
+\cellcolor{lightgray} \textbf{T\'{i}tulo do Projeto} & Meu Projeto de Ensino \\\hline
+
+\cellcolor{lightgray} \textbf{Datas (dia/mês/ano)} & \hfill \textbf{Início}: 30/04/2019 \hfill \textbf{Fim:} 31/12/2020 \hfill {\color{white}x} \\\hline
+
+\cellcolor{lightgray} \textbf{Proponente} &\hfill \textbf{Nome:} Fulano de Tal \hfill \textbf{Email:} Fulano.de.Tal@gmail.com \hfill {\color{white}x}\\\hline 
+
+\cellcolor{lightgray} \textbf{Campus} &  Porto Alegre-SC \\\hline
+
+\cellcolor{lightgray} \textbf{Curso(s) de vinculação} & Curso 1 \\\hline
+
+\cellcolor{lightgray} \textbf{Área do Conhecimento CNPq} &  Ciências Exatas e da Terra \\\hline
+
+\cellcolor{lightgray} \textbf{Carga Horária Semanal} &  20 horas \\\hline
+
+
+\cellcolor{lightgray} \textbf{Palavras-chave} {\tiny (máx. 4, separadas por ponto e vírgula)} & Avaliação Híbrida, Formas de Avaliação, Universidade do Século XXI , Diversidade \\\hline
+
+\end{tabularx}
+\end{center}
+\end{table}
+\vspace{-10mm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+{\footnotesize
+O projeto deve ter, no máximo, 10 páginas. Fonte: Times New Roman, 12, espaço entre linhas 1,5
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% RESUMO
+\begin{table}[H]
+\begin{center}
+\rowcolors{1}{lightgray}{lightgray}\begin{tabularx}{\textwidth}{|X|}
+\hline
+{\bf Resumo} {\tiny (somente texto, até 35000 caracteres)}\\\hline
+\end{tabularx}
+\end{center}
+\end{table}
+\vspace{-10mm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Atualmente, bla bla bla bla bla
+
+
+%\vspace{5mm}
+
+\noindent {\large \textbf{Equipe Executora}} (Adicionar quantas linhas for necessário)
+
+\begin{table}[H]
+\begin{center}
+\begin{tabularx}{\textwidth}{|X|p{2.5cm}|p{3.5cm}|p{3.5cm}|p{1.5cm}|}
+\cellcolor{lightgray} {\bf Nome} & \cellcolor{lightgray} \textbf{Vínculo} {\tiny \bf (Discente, Docente, TAE ou outro)} & \cellcolor{lightgray} \textbf{Campus} & \cellcolor{lightgray} \textbf{Função} {\tiny \bf (coordenador, colaborador, bolsista, etc.)}  & \cellcolor{lightgray} \textbf{Carga Horária Semanal} \\\hline
+Fulano de Tal		  		           & Docente & Porto Alegre-SC  & Coordenador     & 2 horas \\\hline
+Alice Maravilha    		   & Discente & Porto Alegre-SC  & Colaboradora 	  & 2 horas \\\hline
+Bolsista B(*)			 	          & Discente & Porto Alegre-SC  & Bolsista & 12 horas \\\hline
+Voluntário V(*)		 	                & Discente & Porto Alegre-SC  & Voluntário & 12 horas \\\hline
+\end{tabularx}
+\end{center}
+\end{table}
+\vspace{-10mm}
+\noindent (*) São previstos pelo menos um bolsista (para 2020) e um voluntário, ambos com dedicação de no mínimo 12 horas para o projeto. Bolsistas e voluntários serão selecionados conforme a demanda do projeto.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% INTRODUCAO
+\begin{table}[H]
+\begin{center}
+\rowcolors{1}{lightgray}{lightgray}\begin{tabularx}{\textwidth}{|X|}
+\hline
+{\bf 1 Introdução e justificativa} \textit{(Contextualização e importância da temática do projeto, considerando o Projeto Pedagógico do Curso de Graduação do proponente e o Plano de Desenvolvimento Institucional (PDI) da Unipampa, principalmente em atenção aos contextos sociocultural, educacional, econômico e político da região de inserção da Unipampa ou do Campus}\\\hline
+\end{tabularx}
+\end{center}
+\end{table}
+\vspace{-10mm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+A Universidade bla bla bla bla
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% OBJETIVOS
+\begin{table}[H]
+\begin{center}
+\rowcolors{1}{lightgray}{lightgray}\begin{tabularx}{\textwidth}{|X|}
+\hline
+{\bf 2 Objetivos}\\\hline
+{\bf 2.1 Geral}\\\hline
+\end{tabularx}
+\end{center}
+\end{table}
+\vspace{-10mm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Investigar bla bla bla bla 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% OBJETIVOS ESPECIFICOS
+\begin{table}[H]
+\begin{center}
+\rowcolors{1}{lightgray}{lightgray}\begin{tabularx}{\textwidth}{|X|}
+\hline
+{\bf 2.3 Específicos} \textit{(Ação pretendida considerando: a) a temática do projeto e o aprofundamento conceitual (conteúdos);
+ c) alternativas à evasão e retenção; d) a interação e integração acadêmica de forma interdisciplinar e contextualizada; e) a interação ensino, pesquisa e extensão; f) a comunicação e ou socialização dos resultados obtido)}\\\hline
+\end{tabularx}
+\end{center}
+\end{table}
+\vspace{-10mm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{enumerate}[label=(\subscript{e}{{\arabic*}})]
+
+\item avaliar bla bla bla
+
+\item analisar bla bla bla 
+
+\item propor bla bla bla
+
+\end{enumerate}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% REFERENCIAL TEORICO
+\begin{table}[H]
+\begin{center}
+\rowcolors{1}{lightgray}{lightgray}\begin{tabularx}{\textwidth}{|X|}
+\hline
+{\bf 3 Referencial teórico}\\\hline
+\end{tabularx}
+\end{center}
+\end{table}
+\vspace{-10mm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Segundo especialistas, bla bla bla bla bla
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% PRESSUPOSTOS METODOLOGICOS
+\begin{table}[H]
+\begin{center}
+\rowcolors{1}{lightgray}{lightgray}\begin{tabularx}{\textwidth}{|X|}
+\hline
+{\bf 4 Pressupostos metodológicos} \textit{(metodologias e estratégias que contemplam: a) os procedimentos em relação aos objetivos propostos e temática do projeto; b) a interação e integração acadêmica de forma interdisciplinar e contextualizada; c) a articulação ensino, pesquisa e extensão; d) a Comunicação e ou socialização dos resultados obtidos);} \\\hline
+\end{tabularx}
+\end{center}
+\end{table}
+\vspace{-10mm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\textbf{Aspectos formativos}.
+A equipe executora bla bla bla
+
+\textbf{Sistematização de estudos e elaboração de relatórios}.
+Bla bla bla bla 
+
+\textbf{Articulação com a pesquisa}.
+Bla bla bla bla
+
+\textbf{Articulação com a extensão}.
+Bla bla bla bla
+
+\textbf{Avaliação das atividades exercidas pelos discentes}.
+Bla bla bla bla
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% RESULTADOS ESPERADOS
+\begin{table}[H]
+\begin{center}
+\rowcolors{1}{lightgray}{lightgray}\begin{tabularx}{\textwidth}{|X|}
+\hline
+{\bf Resultados esperados} \textit{(considerar os objetivos geral e específicos)}  \\\hline
+\end{tabularx}
+\end{center}
+\end{table}
+\vspace{-10mm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{enumerate}[label=(\subscript{r}{{\arabic*}})]
+
+\item Aumentar bla bla bla bla
+\item Promover bla bla bla bla 
+\item Desenvolver bla bla bla bla
+\item Estimular bla bla bla bla
+\end{enumerate}
+
+\vfill
+
+{\color{white}x}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% PARCERIAS
+%\begin{comment}
+\begin{table}[H]
+\begin{center}
+\begin{tabularx}{\textwidth}{|X|p{5cm}|}
+\multicolumn{2}{l}{\noindent \textbf{Avaliação do projeto}}\\
+\cellcolor{lightgray} {\bf Critério} & \cellcolor{lightgray} \textbf{Indicador} \\\hline
+
+\multirow{7}{*}{\shortstack[l]{Processos relativos a adoção das metodologias, estabelecimento de\\ metas e acompanhamento do êxito destas metodologias.(*)}} 
+& Média de alunos presentes em aula \\\cline{2-2}
+& Percepção dos alunos em relação aos professores/disciplinas \\\cline{2-2}
+& Percepção dos docentes em relação a turma \\\cline{2-2}
+& Satisfação dos alunos em relação ao método ensino aprendizagem \\\hline
+
+Os estudantes julgam a utilização de diferentes abordagens de avaliação relevantes ao processo de ensino-aprendizagem & Porcentagem de alunos satisfeitos \\\hline
+
+As avaliações realizadas estavam dentro das expectativas dos estudantes
+ & Porcentagem de alunos satisfeitos \\\hline
+ 
+\end{tabularx}
+\end{center}
+\end{table}
+\vspace{-10mm}
+%\end{comment}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\noindent (*) Critério global, válido para todos os indicadores.
+
+
+\vfill
+
+{\color{white}x}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% REFERENCIAS
+\begin{table}[H]
+\begin{center}
+\rowcolors{1}{lightgray}{lightgray}\begin{tabularx}{\textwidth}{|X|}
+\hline
+{\bf Referências}\\\hline
+\end{tabularx}
+\end{center}
+\end{table}
+\vspace{-10mm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begingroup
+\renewcommand{\section}[2]{}%
+\renewcommand{\chapter}[2]{}% for other classes
+
+{\normalsize
+\bibliographystyle{sbc}
+\bibliography{references}
+}
+
+\endgroup
+
+
+
+\vspace{5mm}
+\noindent {\large \textbf{Cronograma de Atividades}}  (Adicionar quantas linhas for necessário)
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% CRONOGRAMA
+% ANO 1
+\begin{table}[H]
+\begin{center}
+\begin{tabularx}{\textwidth}{|p{10cm}|X|X|X|X|X|X|X|X|X|X|X|X|X|}
+\multicolumn{13}{|c|}{\cellcolor{lightgray} \textbf{Ano 1}} \\\hline
+\cellcolor{lightgray} & J & F & M & A & M & J & J & A & S & O & N & D \\
+\cellcolor{lightgray}  \textbf{Descri\c{c}\~{a}o da Atividade} & A & E & A & B & A & U & U & G & E & U & O & E \\
+\cellcolor{lightgray}  & N & V & R & R & I & N & L & O & T & T & V & Z \\\hline
+Revisão da literatura       		&  x  & x & x  & x &  &  &   &   &   &   &   &   \\\hline
+Seleção das disciplinas  e apresentação do projeto   	&    &   & x & x &   &   &   &  x &  x  &   &    &   \\\hline
+Planejamento dos métodos a 
+serem aplicados e avaliados 	&    &   &   &  & x  &   &   & x  &  x  &   &    &   \\\hline
+Preparação de material e aplicação dos métodos 		&    &   &   &  & x  & x  & x  &   &  x  &  x & x   &   \\\hline
+Coleta e análise de dados para 
+avaliação do projeto 			&    &   &    &   &   &   & x  &   &    &   & x   & x  \\\hline
+Proposição de novas técnicas 
+sistemáticas de avaliação        &    &   &    &   &   &   & x  & x  &    &   &  x  & x  \\\hline
+Divulgar e publicar os 
+resultados do primeiro ano  	&    &   &   &   &   &   &  &  &  & x & x & x \\\hline
+\end{tabularx}
+\end{center}
+\end{table}
+\vspace{-10mm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% CRONOGRAMA
+% ANO 2
+\begin{table}[H]
+\begin{center}
+\begin{tabularx}{\textwidth}{|p{10cm}|X|X|X|X|X|X|X|X|X|X|X|X|X|}
+\multicolumn{13}{|c|}{\cellcolor{lightgray} \textbf{Ano 2}} \\\hline
+\cellcolor{lightgray} & J & F & M & A & M & J & J & A & S & O & N & D \\
+\cellcolor{lightgray}  \textbf{Descri\c{c}\~{a}o da Atividade} & A & E & A & B & A & U & U & G & E & U & O & E \\
+\cellcolor{lightgray}  & N & V & R & R & I & N & L & O & T & T & V & Z \\\hline
+Seleção das disciplinas  e apresentação do projeto   	&    &   & x & x &   &   &   &  x &  x  &   &    &   \\\hline
+Planejamento dos métodos a 
+serem aplicados e avaliados 	&    &   &  x & x &   &   &   & x  &  x  &   &    &   \\\hline
+Preparação de material e aplicação dos métodos 		&    & x  & x  &  & x  & x  & x  &   &  x  &  x & x   &   \\\hline
+Coleta e análise de dados para 
+avaliação do projeto 			&    &   &    &   &   & x  & x  &   &    &   & x   & x  \\\hline
+Proposição de novas técnicas 
+sistemáticas de avaliação        &    &   &    &   &   &   & x  & x  &    &   &  x  & x  \\\hline
+Divulgar e publicar os 
+resultados do primeiro ano  	&    &   &   &   &   &   &  &  &  & x & x & x \\\hline
+\end{tabularx}
+\end{center}
+\end{table}
+\vspace{-10mm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+{\color{white}x}
+
+\label{DocLastPage}
+
+\end{document}
